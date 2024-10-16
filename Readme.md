@@ -1,0 +1,1 @@
+A project that provides URL shortening service along with analytics on generated links/ids.
