@@ -1,12 +1,12 @@
 require("dotenv").config()
 const express =require("express");
 const path = require("path");
-const urlRoute= require("./routes/url");
-const staticRoute=require("./routes/staticRouter");
-const userRoute= require("./routes/userRouter");
-const connectDB = require("./connection");
+const urlRoute= require("../routes/url");
+const staticRoute=require("../routes/staticRouter");
+const userRoute= require("../routes/userRouter");
+const connectDB = require("../connection");
 // const { restrictToLoggedinUsers } = require("./middleware/auth");
-const { restrictToLoggedinUsers } = require("./middleware/authJWT");
+const { restrictToLoggedinUsers } = require("../middleware/authJWT");
 const cookieParser = require("cookie-parser");
 
 const app=express();

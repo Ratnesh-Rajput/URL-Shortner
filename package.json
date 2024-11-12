@@ -4,7 +4,7 @@
   "description": "backend proj that shortens url",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon ./api/index.js"
   },
   "author": "Ratnesh-Rajput",
   "license": "ISC",

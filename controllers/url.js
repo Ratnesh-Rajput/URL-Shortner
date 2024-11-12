@@ -18,7 +18,7 @@ async function handleGenerateNewShortURL(req,res){
         visitHistory:[]
     })
     return res.status(201).render("home",{id:shortID });
-    return res.status(201).json({shortURL:`${shortID}`});
+    // return res.status(201).json({shortURL:`${shortID}`});
 };
 
  async function handleRedirectfromShortURL(req,res){
