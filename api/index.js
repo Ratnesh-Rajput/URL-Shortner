@@ -29,4 +29,4 @@ app.use("/url",restrictToLoggedinUsers,urlRoute); //here restrict is inline midd
 app.use("/",staticRoute);
 app.use("/user",userRoute);
 
-app.listen(PORT,()=>{console.log(`Server running at port:${PORT}`)});
+module.exports = app;
