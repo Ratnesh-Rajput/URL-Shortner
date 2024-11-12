@@ -2,9 +2,9 @@
   "name": "url_shortner",
   "version": "1.0.0",
   "description": "backend proj that shortens url",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "nodemon ./api/index.js"
+    "start": "nodemon api/index.js"
   },
   "author": "Ratnesh-Rajput",
   "license": "ISC",
