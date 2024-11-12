@@ -1,0 +1,47 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener</title>
+</head>
+<body style="background-color: #050a05; color: #e8f4e7; font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh;">
+   <h1 style="color: #abd5a6; margin-bottom: 20px;">URL Shortener</h1>
+   <% if (locals.id) { %>
+    <div style="margin-bottom: 20px;">
+        URL Generated: <a href="http://localhost:8001/url/<%= id %>" style="color: #749cbd; text-decoration: none;">http://localhost:8001/url/<%= id %></a>
+    </div>
+   <% } %>
+   <div style="margin-bottom: 30px; background-color:#749cbd; padding: 20px; border-radius: 8px; width: 300px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <form method="post" action="/url" style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+        <label style="color: #000000;"><strong>Enter original URL:</strong></label>
+        <input type="text" name="url" placeholder="https://example.com" style="padding: 10px; border: 1px solid #abd5a6; border-radius: 5px; width: 100%;"/>
+        <button type="submit" style="background-color: #abd5a6; color: #050a05; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;"><strong>Generate</strong></button></button>
+    </form>
+   </div>
+   <% if (locals.url) { %>
+        <table style="border-collapse: collapse; width: 80%; margin-top: 20px; background-color: #32676a; border: 2px solid #abd5a6;">
+            <thead>
+                <tr style="background-color: #abd5a6; color: #050a05;">
+                    <th style="padding: 10px; border: 1px solid #050a05;">S.no</th>
+                    <th style="padding: 10px; border: 1px solid #050a05;">ID Generated</th>
+                    <th style="padding: 10px; border: 1px solid #050a05;">Redirect Url</th>
+                    <th style="padding: 10px; border: 1px solid #050a05;">Visit-History</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% url.forEach((url,index)=> { %>
+                 <tr style="text-align: center;">
+                    <td style="padding: 8px; border: 1px solid #050a05;"><%= index+1 %></td>
+                    <td style="padding: 8px; border: 1px solid #050a05;"><%= url.shortId %></td>
+                    <td style="padding: 8px; border: 1px solid #050a05;"><%= url.redirectURL %></td>
+                    <td style="padding: 8px; border: 1px solid #050a05;"><%= url.visitHistory.length %></td>
+                 </tr>
+                <% }) %>
+            </tbody>
+        </table>
+   <% } %>
+</body>
+</html>

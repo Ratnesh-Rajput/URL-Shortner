@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login for URL </title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form method="post" action="/user/login">
+        <br>
+        <label for="">Registered Email</label>
+        <input type="text" required name="email"/>
+        <br>
+        <label for="">Password</label>
+        <input type="text" required name="password" />
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <br>
+    <form method="get" action="http://localhost:8001/signup">
+        <br>
+        <label for="">New User</label>
+        <button type="submit">Signup</button>
+    </form>
+</body>
+</html>
