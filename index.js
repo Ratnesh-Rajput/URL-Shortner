@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express =require("express");
 const path = require("path");
 const urlRoute= require("./routes/url");
@@ -9,9 +10,9 @@ const { restrictToLoggedinUsers } = require("./middleware/authJWT");
 const cookieParser = require("cookie-parser");
 
 const app=express();
-const PORT=8001;
+const PORT= process.env.PORT || 8001;
 // db connection
- connectDB("mongodb://127.0.0.1:27017/short_url")
+ connectDB(process.env.MONGO_URL ||"mongodb://127.0.0.1:27017/short_url")
  .then(()=>{console.log('MongoDB connected')})
  .catch((err)=>{console.log('err connecting DB',err)});
 
